@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import argparse
 import random
-import numpy as geek
+import numpy as np
 import skimage.util.noise as noise
 
 def img_resize(image,resize_height, resize_width):
@@ -274,7 +274,7 @@ def Histogram_Equalization(image , gray_scale=False):
     def hiseq(image):
         data = cal_hiseq(image)
         p = data/image.size
-        p_sum = geek.cumsum(p)
+        p_sum = np.cumsum(p)
         equal = np.around(p_sum * 255).astype('uint8')
 
         return equal[image]
